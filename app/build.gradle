@@ -23,6 +23,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    flavorDimensions "audience"
+    productFlavors {
+        // we can set different base urls depend on the environment
+        playStore {
+            setProperty("archivesBaseName", "AppName")
+            versionNameSuffix "-release"
+            buildConfigField "String", "BASE_URL", "https://api.github.com/"
+        }
+
+        staging {
+            setProperty("archivesBaseName", "AppName")
+            versionNameSuffix "-Staging"
+            buildConfigField "String", "BASE_URL", "https://api.github.com/"
+        }
+    }
+
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
