@@ -15,7 +15,6 @@ import com.moustafa.githubrepos.data.db.entities.RepositoryModel
     version = 1,
     exportSchema = false
 )
-@TypeConverters(DateTypeConverters::class)
 abstract class RepositoriesRoomDB : RoomDatabase() {
 
     abstract fun getRepositoriesDao(): RepositoriesDao
