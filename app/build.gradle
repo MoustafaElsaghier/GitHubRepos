@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -29,13 +31,13 @@ android {
         playStore {
             setProperty("archivesBaseName", "AppName")
             versionNameSuffix "-release"
-            buildConfigField "String", "BASE_URL", "https://api.github.com/"
+            buildConfigField "String", "BASE_URL", "\"https://api.github.com/\""
         }
 
         staging {
             setProperty("archivesBaseName", "AppName")
             versionNameSuffix "-Staging"
-            buildConfigField "String", "BASE_URL", "https://api.github.com/"
+            buildConfigField "String", "BASE_URL", "\"https://api.github.com/\""
         }
     }
 
@@ -64,12 +66,16 @@ dependencies {
     implementation("androidx.paging:paging-runtime:3.1.1")
 
     // optional - RxJava2 support
-    implementation("androidx.paging:paging-rxjava2:3.1.1")
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation "androidx.paging:paging-runtime-ktx:3.2.0-alpha03"
+    implementation "androidx.paging:paging-rxjava2-ktx:3.2.0-alpha03"
 
     // room
-    implementation "androidx.room:room-runtime:2.4.3"
-    implementation 'androidx.room:room-ktx:2.4.3'
-    implementation 'androidx.room:room-rxjava2:2.4.3'
+    implementation "androidx.room:room-runtime:2.5.0-beta01"
+    implementation "androidx.room:room-ktx:2.5.0-beta01"
+    implementation "androidx.room:room-paging:2.5.0-beta01"
+    implementation 'androidx.room:room-rxjava2:2.5.0-beta01'
+    kapt "androidx.room:room-compiler:2.5.0-beta01"
 
     // koin
     implementation "io.insert-koin:koin-android:3.3.0"
