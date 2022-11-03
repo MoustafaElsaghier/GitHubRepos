@@ -6,4 +6,10 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/sp_16</item>
     </style>
+
+    <style name="title_value_style">
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+    </style>
 </resources>
