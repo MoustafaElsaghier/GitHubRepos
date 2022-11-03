@@ -3,7 +3,7 @@ package com.moustafa.githubrepos.ui.user_uepos_list.adapter
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import com.moustafa.githubrepos.data.models.RepositoryModel
+import com.moustafa.githubrepos.data.db.entities.RepositoryModel
 import com.moustafa.githubrepos.ui.user_uepos_list.viewholder.ReposViewHolder
 
 class RepositoriesRxAdapter : PagingDataAdapter<RepositoryModel, ReposViewHolder>(

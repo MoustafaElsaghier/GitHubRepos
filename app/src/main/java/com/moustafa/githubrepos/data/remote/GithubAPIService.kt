@@ -1,6 +1,6 @@
 package com.moustafa.githubrepos.data.remote
 
-import com.moustafa.githubrepos.data.models.RepositoryModel
+import com.moustafa.githubrepos.data.db.entities.RepositoryModel
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query

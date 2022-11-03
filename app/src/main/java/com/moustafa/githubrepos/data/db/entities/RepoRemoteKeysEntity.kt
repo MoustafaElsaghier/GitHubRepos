@@ -8,7 +8,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 @Entity(tableName = "repository_remote_keys")
 data class RepoRemoteKeysEntity(
-    @PrimaryKey val keyId: Long,
+    @PrimaryKey val keyId: Int,
     val prevKey: Int?,
     val nextKey: Int?
 ) : Parcelable

@@ -8,16 +8,12 @@ import kotlinx.android.parcel.Parcelize
 
 @Entity(tableName = "repos")
 @Parcelize
-data class RepoEntity(
+data class RepositoryModel(
     @PrimaryKey(autoGenerate = false)
     val id: Int,
     @ColumnInfo(defaultValue = "")
     val name: String,
-    @ColumnInfo(defaultValue = "")
-    val full_name: String,
     val watchers_count: Int,
     @ColumnInfo(defaultValue = "")
     val description: String,
-    @ColumnInfo(defaultValue = "")
-    val language: String,
 ) : Parcelable
