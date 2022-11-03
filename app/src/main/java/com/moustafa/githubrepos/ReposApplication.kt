@@ -18,10 +18,11 @@ class ReposApplication : Application() {
     }
 
     private fun setupKoin() {
+
         startKoin {
             androidLogger(Level.ERROR)
             androidContext(this@ReposApplication)
-            modules(networkModule, dbModule, networkModule, repoModule, viewModelModule)
+            modules(dbModule, networkModule, repoModule, viewModelModule)
         }
     }
 
