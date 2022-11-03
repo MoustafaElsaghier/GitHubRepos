@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initReposRecycler() {
         binding.reposRecycler.adapter = adapter
+        // set bottom footer for showing loader
         binding.reposRecycler.adapter = adapter.withLoadStateFooter(
             footer = LoadingStateAdapter()
         )
@@ -44,6 +45,7 @@ class MainActivity : AppCompatActivity() {
                         dialog.dismiss()
                     }
                     .setPositiveButton(R.string.retry) { _, _ ->
+                        // to retry load data again
                         adapter.retry()
                     }
                     .show()
@@ -53,7 +55,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initLiveData() {
+        // hide progressbar once first page loaded
         binding.progressBar.isVisible = false
+        // observe on changes from the api
         userRepositoriesViewModel.repositoryModel.observe(this) {
             adapter.submitData(lifecycle, it)
         }
