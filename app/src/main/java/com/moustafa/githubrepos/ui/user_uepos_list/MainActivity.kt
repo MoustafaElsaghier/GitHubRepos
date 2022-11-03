@@ -3,6 +3,7 @@ package com.moustafa.githubrepos.ui.user_uepos_list
 import android.app.AlertDialog
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.paging.LoadState
 import com.moustafa.githubrepos.R
@@ -14,7 +15,7 @@ import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    var adapter = RepositoriesRxAdapter()
+    private var adapter = RepositoriesRxAdapter()
     private val userRepositoriesViewModel: UserRepositoriesViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,6 +53,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initLiveData() {
+        binding.progressBar.isVisible = false
         userRepositoriesViewModel.repositoryModel.observe(this) {
             adapter.submitData(lifecycle, it)
         }
