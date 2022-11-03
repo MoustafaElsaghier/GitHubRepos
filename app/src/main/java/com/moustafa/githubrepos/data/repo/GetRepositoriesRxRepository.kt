@@ -20,7 +20,7 @@ class GetRepositoriesRxRepository(
             config = PagingConfig(
                 pageSize = 15,
                 enablePlaceholders = true,
-                maxSize = 20,
+                maxSize = 25,
                 prefetchDistance = 3,
                 initialLoadSize = 15
             ),
