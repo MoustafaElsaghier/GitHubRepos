@@ -1,6 +1,7 @@
 package com.moustafa.githubrepos
 
 import android.app.Application
+import com.moustafa.githubrepos.di.dbModule
 import com.moustafa.githubrepos.di.networkModule
 import com.moustafa.githubrepos.di.repoModule
 import com.moustafa.githubrepos.di.viewModelModule
@@ -20,9 +21,7 @@ class ReposApplication : Application() {
         startKoin {
             androidLogger(Level.ERROR)
             androidContext(this@ReposApplication)
-            modules(networkModule)
-            modules(repoModule)
-            modules(viewModelModule)
+            modules(networkModule, dbModule, networkModule, repoModule, viewModelModule)
         }
     }
 
