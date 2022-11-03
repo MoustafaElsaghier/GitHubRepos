@@ -9,4 +9,3 @@ val dbModule = module {
         RepositoriesRoomDB(get() as Context)
     }
 }
-

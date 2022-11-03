@@ -4,15 +4,18 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.moustafa.githubrepos.data.db.dao.ReposRemoteKeysDao
 import com.moustafa.githubrepos.data.db.dao.RepositoriesDao
-import com.moustafa.githubrepos.data.db.entities.RepoEntity
+import com.moustafa.githubrepos.data.db.entities.RepoRemoteKeysEntity
+import com.moustafa.githubrepos.data.db.entities.RepositoryModel
 
 @Database(
-    entities = [RepoEntity::class],
+    entities = [RepositoryModel::class, RepoRemoteKeysEntity::class],
     version = 1,
     exportSchema = false
 )
+@TypeConverters(DateTypeConverters::class)
 abstract class RepositoriesRoomDB : RoomDatabase() {
 
     abstract fun getRepositoriesDao(): RepositoriesDao
@@ -21,17 +24,11 @@ abstract class RepositoriesRoomDB : RoomDatabase() {
     companion object {
         @Volatile
         private var INSTANCE: RepositoriesRoomDB? = null
+        private val LOCK = Any()
 
-        fun getInstance(context: Context): RepositoriesRoomDB =
-            INSTANCE
-                ?: synchronized(this) {
-                    INSTANCE
-                        ?: buildDatabase(
-                            context
-                        ).also {
-                            INSTANCE = it
-                        }
-                }
+        operator fun invoke(context: Context) = INSTANCE ?: synchronized(LOCK) {
+            INSTANCE ?: buildDatabase(context).also { INSTANCE = it }
+        }
 
         private fun buildDatabase(context: Context): RepositoriesRoomDB {
             return Room.databaseBuilder(
