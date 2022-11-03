@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.io.Serializable
 
-@Entity(tableName = "repos_table")
+@Entity(tableName = "repos")
 data class RepoEntity(
     @PrimaryKey(autoGenerate = false)
     val id: Int,
