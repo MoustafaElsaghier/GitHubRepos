@@ -3,4 +3,7 @@
     <string name="repo_name">Repo Name:</string>
     <string name="number_of_repo_watchers">Number Of Repo Watchers:</string>
     <string name="repo_number">Repo Number:</string>
+    <string name="retry">Retry</string>
+    <string name="cancel">Cancel</string>
+    <string name="error">Paging Error</string>
 </resources>
