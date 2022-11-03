@@ -11,11 +11,11 @@ import com.moustafa.githubrepos.data.models.RepositoryModel
 interface RepositoriesDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(users: List<RepositoryModel>)
+    fun insertAll(users: List<RepositoryModel>)
 
     @Query("SELECT * FROM repos ")
     fun pagingSource(): PagingSource<Int, RepositoryModel>
 
     @Query("DELETE FROM repos")
-    suspend fun clearAll()
+    fun clearAll()
 }
