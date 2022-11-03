@@ -45,7 +45,5 @@ val networkModule = module {
             .build().create(GithubAPIService::class.java)
     }
 
-    single { get() as GithubAPIService }
-
 }
 
