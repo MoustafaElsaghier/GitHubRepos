@@ -1,11 +1,13 @@
 package com.moustafa.githubrepos.data.db.entities
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.io.Serializable
+import kotlinx.android.parcel.Parcelize
 
 @Entity(tableName = "repos")
+@Parcelize
 data class RepoEntity(
     @PrimaryKey(autoGenerate = false)
     val id: Int,
@@ -18,4 +20,4 @@ data class RepoEntity(
     val description: String,
     @ColumnInfo(defaultValue = "")
     val language: String,
-) : Serializable
+) : Parcelable
