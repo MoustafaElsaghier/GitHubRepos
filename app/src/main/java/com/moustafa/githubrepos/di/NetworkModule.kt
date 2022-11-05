@@ -1,7 +1,7 @@
 package com.moustafa.githubrepos.di
 
 import com.moustafa.githubrepos.BuildConfig
-import com.moustafa.githubrepos.data.remote.GithubAPIService
+import com.moustafa.githubrepos.data.api.GithubAPIService
 import io.reactivex.schedulers.Schedulers
 import okhttp3.Interceptor.Companion.invoke
 import okhttp3.OkHttpClient

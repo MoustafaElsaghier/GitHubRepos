@@ -1,4 +1,4 @@
-package com.moustafa.githubrepos.data.remote
+package com.moustafa.githubrepos.data.api
 
 import com.moustafa.githubrepos.data.db.entities.RepositoryModel
 import io.reactivex.Single

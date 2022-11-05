@@ -1,6 +1,6 @@
 package com.moustafa.githubrepos.di
 
-import com.moustafa.githubrepos.data.remote.RepositoriesRemoteMediator
+import com.moustafa.githubrepos.data.repo.RepositoriesRemoteMediator
 import com.moustafa.githubrepos.data.repo.GetRepositoriesRxRepository
 import org.koin.dsl.module
 

@@ -7,7 +7,6 @@ import androidx.paging.PagingData
 import androidx.paging.rxjava2.flowable
 import com.moustafa.githubrepos.data.db.RepositoriesRoomDB
 import com.moustafa.githubrepos.data.db.entities.RepositoryModel
-import com.moustafa.githubrepos.data.remote.RepositoriesRemoteMediator
 import io.reactivex.Flowable
 
 class GetRepositoriesRxRepository(
