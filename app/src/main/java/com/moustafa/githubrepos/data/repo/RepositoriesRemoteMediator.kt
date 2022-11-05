@@ -1,15 +1,15 @@
-package com.moustafa.githubrepos.data.remote
+package com.moustafa.githubrepos.data.repo
 
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadType
 import androidx.paging.PagingState
 import androidx.paging.rxjava2.RxRemoteMediator
+import com.moustafa.githubrepos.data.api.GithubAPIService
 import com.moustafa.githubrepos.data.db.RepositoriesRoomDB
 import com.moustafa.githubrepos.data.db.entities.RepoRemoteKeysEntity
 import com.moustafa.githubrepos.data.db.entities.RepositoryModel
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
-import java.io.InvalidObjectException
 
 @OptIn(ExperimentalPagingApi::class)
 class RepositoriesRemoteMediator(
@@ -31,14 +31,11 @@ class RepositoriesRemoteMediator(
                     }
                     LoadType.PREPEND -> {
                         val remoteKeys = getRemoteKeyForFirstItem(state)
-                            ?: throw InvalidObjectException("Result is empty")
-                        remoteKeys.prevKey ?: INVALID_PAGE
+                        remoteKeys?.prevKey ?: INVALID_PAGE
                     }
                     LoadType.APPEND -> {
                         val remoteKeys = getRemoteKeyForLastItem(state)
-                            ?: throw InvalidObjectException("Result is empty")
-
-                        remoteKeys.nextKey ?: INVALID_PAGE
+                        remoteKeys?.nextKey ?: INVALID_PAGE
                     }
                 }
             }
@@ -53,7 +50,9 @@ class RepositoriesRemoteMediator(
                             insertToDb(page, loadType, it)
                         }
                         .map<MediatorResult> { MediatorResult.Success(endOfPaginationReached = it.isEmpty()) }
-                        .onErrorReturn { MediatorResult.Error(it) }
+                        .onErrorReturn {
+                            MediatorResult.Error(it)
+                        }
                 }
 
             }
