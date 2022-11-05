@@ -16,7 +16,7 @@
         android:theme="@style/Theme.GitHubRepos"
         tools:targetApi="31">
         <activity
-            android:name=".ui.features.repos.user_uepos_list.MainActivity"
+            android:name=".ui.features.repos.RepositoriesActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
