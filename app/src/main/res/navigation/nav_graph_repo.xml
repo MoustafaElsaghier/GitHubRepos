@@ -21,7 +21,6 @@
         tools:layout="@layout/fragment_repo_details">
         <argument
             android:name="repoModel"
-            app:argType="com.moustafa.githubrepos.data.db.entities.RepositoryModel"
-            app:nullable="true" />
+            app:argType="com.moustafa.githubrepos.data.db.entities.RepositoryModel" />
     </fragment>
 </navigation>
