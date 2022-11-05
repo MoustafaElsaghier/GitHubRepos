@@ -6,4 +6,5 @@
     <string name="retry">Retry</string>
     <string name="cancel">Cancel</string>
     <string name="error">Paging Error</string>
+    <string name="description">Description</string>
 </resources>
