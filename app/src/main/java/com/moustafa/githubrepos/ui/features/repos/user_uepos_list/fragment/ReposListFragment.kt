@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import com.moustafa.githubrepos.R
 import com.moustafa.githubrepos.databinding.FragmentReposListBinding
@@ -25,7 +25,7 @@ class ReposListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.setContentView(requireActivity(), R.layout.fragment_repos_list)
+        binding = FragmentReposListBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -36,6 +36,13 @@ class ReposListFragment : Fragment() {
     }
 
     private fun initReposRecycler() {
+        adapter.onRepoClickListener = {
+            findNavController().navigate(
+                ReposListFragmentDirections.actionReposListFragmentToRepoDetailsFragment(
+                    it
+                )
+            )
+        }
         binding.reposRecycler.adapter = adapter
         // set bottom footer for showing loader
         binding.reposRecycler.adapter = adapter.withLoadStateFooter(
