@@ -1,4 +1,4 @@
-package com.moustafa.githubrepos.ui.user_uepos_list.viewholder
+package com.moustafa.githubrepos.ui.features.repos.user_uepos_list.viewholder
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater

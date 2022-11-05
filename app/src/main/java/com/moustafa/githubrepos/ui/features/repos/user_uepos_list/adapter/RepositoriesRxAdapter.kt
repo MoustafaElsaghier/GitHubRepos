@@ -1,10 +1,10 @@
-package com.moustafa.githubrepos.ui.user_uepos_list.adapter
+package com.moustafa.githubrepos.ui.features.repos.user_uepos_list.adapter
 
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.moustafa.githubrepos.data.db.entities.RepositoryModel
-import com.moustafa.githubrepos.ui.user_uepos_list.viewholder.ReposViewHolder
+import com.moustafa.githubrepos.ui.features.repos.user_uepos_list.viewholder.ReposViewHolder
 
 class RepositoriesRxAdapter : PagingDataAdapter<RepositoryModel, ReposViewHolder>(
     COMPARATOR

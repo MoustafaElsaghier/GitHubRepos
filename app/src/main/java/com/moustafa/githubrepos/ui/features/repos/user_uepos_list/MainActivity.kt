@@ -1,4 +1,4 @@
-package com.moustafa.githubrepos.ui.user_uepos_list
+package com.moustafa.githubrepos.ui.features.repos.user_uepos_list
 
 import android.app.AlertDialog
 import android.os.Bundle
@@ -8,9 +8,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.paging.LoadState
 import com.moustafa.githubrepos.R
 import com.moustafa.githubrepos.databinding.ActivityMainBinding
-import com.moustafa.githubrepos.ui.user_uepos_list.adapter.LoadingStateAdapter
-import com.moustafa.githubrepos.ui.user_uepos_list.adapter.RepositoriesRxAdapter
-import com.moustafa.githubrepos.ui.user_uepos_list.viewmodel.UserRepositoriesViewModel
+import com.moustafa.githubrepos.ui.features.repos.user_uepos_list.adapter.LoadingStateAdapter
+import com.moustafa.githubrepos.ui.features.repos.user_uepos_list.adapter.RepositoriesRxAdapter
+import com.moustafa.githubrepos.ui.features.repos.user_uepos_list.viewmodel.UserRepositoriesViewModel
 import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {

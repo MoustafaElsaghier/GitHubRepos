@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/reposListFragment"
-        android:name="com.moustafa.githubrepos.ReposListFragment"
+        android:name="com.moustafa.githubrepos.ui.features.repos.user_uepos_list.fragment.ReposListFragment"
         android:label="fragment_repos_list"
         tools:layout="@layout/fragment_repos_list">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/repoDetailsFragment"
-        android:name="com.moustafa.githubrepos.RepoDetailsFragment"
+        android:name="com.moustafa.githubrepos.ui.features.repos.repo_details.fragment.RepoDetailsFragment"
         android:label="fragment_repo_details"
         tools:layout="@layout/fragment_repo_details">
         <argument

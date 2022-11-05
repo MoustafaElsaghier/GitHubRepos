@@ -1,9 +1,9 @@
-package com.moustafa.githubrepos.ui.user_uepos_list.adapter
+package com.moustafa.githubrepos.ui.features.repos.user_uepos_list.adapter
 
 import android.view.ViewGroup
 import androidx.paging.LoadState
 import androidx.paging.LoadStateAdapter
-import com.moustafa.githubrepos.ui.user_uepos_list.viewholder.LoadingStateViewHolder
+import com.moustafa.githubrepos.ui.features.repos.user_uepos_list.viewholder.LoadingStateViewHolder
 
 class LoadingStateAdapter : LoadStateAdapter<LoadingStateViewHolder>() {
     override fun onBindViewHolder(holder: LoadingStateViewHolder, loadState: LoadState) {

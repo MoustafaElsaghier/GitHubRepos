@@ -1,4 +1,4 @@
-package com.moustafa.githubrepos.ui.user_uepos_list.viewmodel
+package com.moustafa.githubrepos.ui.features.repos.user_uepos_list.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
