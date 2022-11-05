@@ -10,14 +10,20 @@ class RepositoriesRxAdapter : PagingDataAdapter<RepositoryModel, ReposViewHolder
     COMPARATOR
 ) {
 
+    lateinit var onRepoClickListener: ((item: RepositoryModel) -> Unit)
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReposViewHolder {
         return ReposViewHolder.create(parent)
     }
 
     override fun onBindViewHolder(holder: ReposViewHolder, position: Int) {
-        getItem(position)?.let {
-            holder.bind(it)
+        getItem(position)?.let { repoModel ->
+            holder.bind(repoModel)
+            holder.itemView.setOnClickListener {
+                onRepoClickListener.invoke(repoModel)
+            }
         }
+
     }
 
     companion object {
